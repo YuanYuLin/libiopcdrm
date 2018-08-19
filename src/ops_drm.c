@@ -60,8 +60,12 @@ static struct drm_dev_t *drm_find_dev(int fd)
 	drmModeConnector *conn;
 	drmModeEncoder *enc;
 
+	if(fd < 0)
+		return NULL;
+
 	if ((res = drmModeGetResources(fd)) == NULL) {
 		printf("drmModeGetResources() failed\n");
+		return NULL;
 	}
 
 	/* find all available connectors */
