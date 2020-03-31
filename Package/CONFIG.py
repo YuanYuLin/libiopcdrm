@@ -16,6 +16,7 @@ def set_global(args):
 def MAIN_ENV(args):
     set_global(args)
 
+    ops.exportEnv(ops.setEnv("SUPPORT_IOPCDRM", "y"))
     return False
 
 def MAIN_EXTRACT(args):
